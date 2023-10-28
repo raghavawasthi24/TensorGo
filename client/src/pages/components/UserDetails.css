@@ -1,0 +1,11 @@
+.userDetails{
+    width: 90%;
+    margin: auto 1rem;
+
+}
+.userBox{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid white;
+    /* background-color:; */
+}

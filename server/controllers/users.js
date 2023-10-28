@@ -7,7 +7,7 @@ const { v4: uuidv4 } = require("uuid");
 let path = require("path");
 const axios = require("axios");
 
-const getUser = (req, res) => {
+const fetchUser = (req, res) => {
   try {
     axios
       .get("https://gorest.co.in/public-api/users")
@@ -32,6 +32,14 @@ const getUser = (req, res) => {
   }
 };
 
+const getUser= async(req,res)=>{
+    const allUsers= await User.find();
+    return res.status(200).json({
+        msg:"All users fetched successfully",
+        allUsers
+    })    
+}
+
 
 const updateUser =async (req, res) => {
     const {id,name,email,gender,status}=req.body;
@@ -52,4 +60,4 @@ const updateUser =async (req, res) => {
   };
   
 
-module.exports = { getUser,updateUser };
+module.exports = { getUser,updateUser,fetchUser };

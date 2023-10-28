@@ -1,5 +1,5 @@
 const express = require("express");
-const { getUser, updateUser } = require("../controllers/users");
+const { getUser, updateUser, fetchUser } = require("../controllers/users");
 const router = express.Router();
 // const auth = require("../middleware/auth");
 // const { loginUser, registerUser} = require("../controllers/users");
@@ -8,6 +8,7 @@ const router = express.Router();
 
 //Routes for user 
 router.get("/getUsers", getUser);
+router.get("/fetchUsers", fetchUser);
 router.put("/updateUser/:id", updateUser);
 
 // //Routes for slots
