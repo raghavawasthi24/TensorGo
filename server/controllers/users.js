@@ -32,4 +32,24 @@ const getUser = (req, res) => {
   }
 };
 
-module.exports = { getUser };
+
+const updateUser =async (req, res) => {
+    const {id,name,email,gender,status}=req.body;
+    const userId = req.params.id; 
+    try{
+     const user =await User.findById(userId);
+     console.log(user);
+     await user.updateOne({$set: {id,name,email,gender,status}})
+       return res.status(200).json({
+         msg: "User updated successfully",
+         user,
+       });
+    }
+    catch (err){
+     return res.status(500).json(err);
+    }
+
+  };
+  
+
+module.exports = { getUser,updateUser };
