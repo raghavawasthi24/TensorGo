@@ -6,8 +6,11 @@ import UserDetails from './components/UserDetails';
 const Home = () => {
   return (
     <div className='home'>
+        <div className='homeBtn'>
+          <Button variant="outlined" sx={{borderColor:"white", color:"white"}}>Outlined</Button>
+          <Button variant="outlined" sx={{borderColor:"white", color:"white"}}>Outlined</Button>
+        </div>
         <h1>Get and Update User Details</h1>
-        <Button variant="outlined" className='button'>Outlined</Button>
         <UserDetails/>
     </div>
   )
