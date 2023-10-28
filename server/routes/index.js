@@ -1,5 +1,5 @@
 const express = require("express");
-const { getUser, updateUser, fetchUser } = require("../controllers/users");
+const { getUser, updateUser, fetchUser, csvHandler } = require("../controllers/users");
 const router = express.Router();
 // const auth = require("../middleware/auth");
 // const { loginUser, registerUser} = require("../controllers/users");
@@ -10,6 +10,7 @@ const router = express.Router();
 router.get("/getUsers", getUser);
 router.get("/fetchUsers", fetchUser);
 router.put("/updateUser/:id", updateUser);
+router.post("/export", csvHandler);
 
 // //Routes for slots
 // router.post("/bookSlot",auth,bookSlot);

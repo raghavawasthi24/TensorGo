@@ -132,7 +132,7 @@ const UserDetails = () => {
                   </TableCell>
                   <TableCell>
                     <EditIcon
-                      sx={{ color: "white", backgroundColor: "grey" }}
+                      sx={{ color: "white", backgroundColor: "#222831" }}
                       onClick={() => currentUser(val)}
                     />
                   </TableCell>
@@ -200,7 +200,7 @@ const UserDetails = () => {
               sx={{borderColor:"white", color:"white"}}
               onClick={submitHandler}
             >
-              Outlined
+              Update
             </Button>
           </div>
         </div>
