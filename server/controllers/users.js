@@ -47,14 +47,13 @@ const updateUser = async (req, res) => {
     await user.updateOne({ $set: { id, name, email, gender, status } });
     return res.status(200).json({
       msg: "User updated successfully",
-      user,
     });
   } catch (err) {
     return res.status(500).json(err);
   }
 };
 
-const csvHandler = async (req, res) => {
+const exportCSV = async (req, res) => {
   const data = await User.find();
   const json2csvParser = new Json2csvParser();
   const fields = ["id", "name", "email", "gender", "status"];
@@ -73,4 +72,4 @@ const csvHandler = async (req, res) => {
   }
 };
 
-module.exports = { getUser, updateUser, fetchUser, csvHandler };
+module.exports = { getUser, updateUser, fetchUser, exportCSV };

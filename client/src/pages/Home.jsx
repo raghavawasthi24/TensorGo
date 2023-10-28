@@ -8,14 +8,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const fetch = () => {
-    axios.get("http://localhost:5000/api/getUsers").then((res) => {
+    axios.get("https://tensorflow.onrender.com/api/getUsers").then((res) => {
       console.log(res.data);
       toast.success("Data Fetched Successfully");
     });
   }
 
   const download = () => {
-    axios.post("http://localhost:5000/api/export").then((res) => {
+    axios.post("https://tensorflow.onrender.com/api/export").then((res) => {
       console.log(res.data);
       toast.success("Data exported Successfully");
     });

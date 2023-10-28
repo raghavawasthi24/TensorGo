@@ -1,21 +1,13 @@
 const express = require("express");
-const { getUser, updateUser, fetchUser, csvHandler } = require("../controllers/users");
+const { getUser, updateUser, fetchUser, exportCSV } = require("../controllers/users");
 const router = express.Router();
-// const auth = require("../middleware/auth");
-// const { loginUser, registerUser} = require("../controllers/users");
-// const { bookSlot, allSlot, pendingSlot } = require("../controllers/slots");
 
 
 //Routes for user 
 router.get("/getUsers", getUser);
 router.get("/fetchUsers", fetchUser);
 router.put("/updateUser/:id", updateUser);
-router.post("/export", csvHandler);
-
-// //Routes for slots
-// router.post("/bookSlot",auth,bookSlot);
-// router.post("/allSlots",auth,allSlot);
-// router.post("/pendingSlots",auth,pendingSlot);
+router.post("/export", exportCSV);
 
 
 module.exports = router;

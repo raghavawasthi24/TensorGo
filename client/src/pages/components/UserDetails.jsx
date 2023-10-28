@@ -23,7 +23,7 @@ const UserDetails = () => {
   const [openpopUp, setOpenpopUp] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/getUsers").then((res) => {
+    axios.get("https://tensorflow.onrender.com/api/getUsers").then((res) => {
       console.log(res.data);
       setuserlist(res.data.allUsers);
     });
@@ -47,7 +47,7 @@ const UserDetails = () => {
     console.log(currentUserDetails);
     axios
       .put(
-        `http://localhost:5000/api/updateUser/${currentUserDetails._id}`,
+        `https://tensorflow.onrender.com/api/updateUser/${currentUserDetails._id}`,
         currentUserDetails
       )
       .then((res) => {
